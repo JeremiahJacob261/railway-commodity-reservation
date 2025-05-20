@@ -1,231 +1,304 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
-import { Train, Package } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Train, Package, MapPin } from "lucide-react"
+import { supabase } from "@/lib/supabase"
 
-// Mock data for railway routes and stations
-const railwayRoutes = [
-  {
-    id: "route-1",
-    name: "Eastern Corridor",
-    color: "#3b82f6", // blue
-    path: "M100,200 L300,150 L500,180 L700,120",
-  },
-  {
-    id: "route-2",
-    name: "Western Line",
-    color: "#ef4444", // red
-    path: "M100,300 L300,320 L500,280 L700,350",
-  },
-  {
-    id: "route-3",
-    name: "Northern Express",
-    color: "#10b981", // green
-    path: "M200,100 L250,200 L400,250 L600,220",
-  },
-]
-
-const stations = [
-  { id: "station-1", name: "Chicago Terminal", x: 100, y: 200, routeIds: ["route-1"] },
-  { id: "station-2", name: "Detroit Junction", x: 300, y: 150, routeIds: ["route-1"] },
-  { id: "station-3", name: "Cleveland Station", x: 500, y: 180, routeIds: ["route-1"] },
-  { id: "station-4", name: "Pittsburgh Yard", x: 700, y: 120, routeIds: ["route-1"] },
-  { id: "station-5", name: "Kansas City Hub", x: 100, y: 300, routeIds: ["route-2"] },
-  { id: "station-6", name: "Denver Exchange", x: 300, y: 320, routeIds: ["route-2"] },
-  { id: "station-7", name: "Salt Lake Depot", x: 500, y: 280, routeIds: ["route-2"] },
-  { id: "station-8", name: "Portland Terminal", x: 700, y: 350, routeIds: ["route-2"] },
-  { id: "station-9", name: "Minneapolis North", x: 200, y: 100, routeIds: ["route-3"] },
-  { id: "station-10", name: "Omaha Central", x: 250, y: 200, routeIds: ["route-3"] },
-  { id: "station-11", name: "St. Louis Gateway", x: 400, y: 250, routeIds: ["route-3"] },
-  { id: "station-12", name: "Nashville Freight", x: 600, y: 220, routeIds: ["route-3"] },
-]
-
-// Mock cargo data
-const cargoShipments = [
-  {
-    id: "cargo-1",
-    type: "Coal",
-    origin: "Chicago Terminal",
-    destination: "Pittsburgh Yard",
-    currentPosition: { x: 400, y: 165 }, // Somewhere between Detroit and Cleveland
-    progress: 65,
-    routeId: "route-1",
-  },
-  {
-    id: "cargo-2",
-    type: "Grain",
-    origin: "Kansas City Hub",
-    destination: "Portland Terminal",
-    currentPosition: { x: 400, y: 300 }, // Somewhere between Denver and Salt Lake
-    progress: 45,
-    routeId: "route-2",
-  },
-  {
-    id: "cargo-3",
-    type: "Lumber",
-    origin: "Minneapolis North",
-    destination: "Nashville Freight",
-    currentPosition: { x: 325, y: 225 }, // Somewhere between Omaha and St. Louis
-    progress: 30,
-    routeId: "route-3",
-  },
-]
-
-interface CargoTrackingMapProps {
-  selectedCargoId?: string
-  height?: string
+interface TrackingMapProps {
+  shipmentId?: string
+  showAllShipments?: boolean
 }
 
-export function CargoTrackingMap({ selectedCargoId, height = "500px" }: CargoTrackingMapProps) {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [selectedCargo, setSelectedCargo] = useState<(typeof cargoShipments)[0] | null>(null)
-  const [hoveredStation, setHoveredStation] = useState<(typeof stations)[0] | null>(null)
-  const svgRef = useRef<SVGSVGElement>(null)
+export function CargoTrackingMap({ shipmentId, showAllShipments = false }: TrackingMapProps) {
+  const mapRef = useRef<HTMLDivElement>(null)
+  const [selectedShipment, setSelectedShipment] = useState<string | null>(shipmentId || null)
+  const [shipments, setShipments] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Simulate map loading
-    const timer = setTimeout(() => {
-      setIsLoaded(true)
-    }, 500)
+    const fetchShipments = async () => {
+      setLoading(true)
 
-    return () => clearTimeout(timer)
-  }, [])
+      const query = supabase
+        .from("rail_shipments")
+        .select(`
+          id,
+          reference_number,
+          status,
+          origin:rail_stations!rail_shipments_origin_id_fkey(id, name, code, latitude, longitude),
+          destination:rail_stations!rail_shipments_destination_id_fkey(id, name, code, latitude, longitude),
+          commodity:rail_commodities(id, name)
+        `)
+        .order("created_at", { ascending: false })
+
+      if (!showAllShipments && shipmentId) {
+        query.eq("id", shipmentId)
+      }
+
+      const { data, error } = await query.limit(10)
+
+      if (error) {
+        console.error("Error fetching shipments:", error)
+      } else {
+        setShipments(data || [])
+        if (data && data.length > 0 && !selectedShipment) {
+          setSelectedShipment(data[0].id)
+        }
+      }
+
+      setLoading(false)
+    }
+
+    fetchShipments()
+  }, [shipmentId, showAllShipments])
 
   useEffect(() => {
-    if (selectedCargoId) {
-      const cargo = cargoShipments.find((c) => c.id === selectedCargoId)
-      if (cargo) {
-        setSelectedCargo(cargo)
+    if (mapRef.current && shipments.length > 0) {
+      renderMap()
+    }
+  }, [shipments, selectedShipment])
+
+  const renderMap = () => {
+    if (!mapRef.current) return
+
+    const canvas = document.createElement("canvas")
+    canvas.width = mapRef.current.clientWidth
+    canvas.height = 400
+    mapRef.current.innerHTML = ""
+    mapRef.current.appendChild(canvas)
+
+    const ctx = canvas.getContext("2d")
+    if (!ctx) return
+
+    // Draw map background
+    ctx.fillStyle = "#f0f4f8"
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+    // Draw railway lines
+    ctx.strokeStyle = "#888"
+    ctx.lineWidth = 2
+    ctx.beginPath()
+
+    // Horizontal main line
+    ctx.moveTo(50, 200)
+    ctx.lineTo(canvas.width - 50, 200)
+
+    // Branch lines
+    ctx.moveTo(150, 100)
+    ctx.lineTo(150, 300)
+
+    ctx.moveTo(300, 50)
+    ctx.lineTo(300, 350)
+
+    ctx.moveTo(450, 150)
+    ctx.lineTo(450, 250)
+
+    ctx.moveTo(600, 100)
+    ctx.lineTo(600, 300)
+
+    ctx.stroke()
+
+    // Draw stations
+    const stationPositions: Record<string, { x: number; y: number }> = {
+      CHI: { x: 100, y: 200 },
+      PIT: { x: 700, y: 200 },
+      KCY: { x: 150, y: 100 },
+      PDX: { x: 150, y: 300 },
+      MSP: { x: 300, y: 50 },
+      NSH: { x: 300, y: 350 },
+      DET: { x: 450, y: 150 },
+      CLE: { x: 450, y: 250 },
+      DEN: { x: 600, y: 100 },
+      SLC: { x: 600, y: 300 },
+    }
+
+    // Draw all stations
+    Object.entries(stationPositions).forEach(([code, pos]) => {
+      ctx.fillStyle = "#333"
+      ctx.beginPath()
+      ctx.arc(pos.x, pos.y, 6, 0, Math.PI * 2)
+      ctx.fill()
+
+      ctx.fillStyle = "#333"
+      ctx.font = "12px Arial"
+      ctx.fillText(code, pos.x - 12, pos.y - 10)
+    })
+
+    // Draw selected shipment
+    const shipment = shipments.find((s) => s.id === selectedShipment)
+    if (shipment) {
+      const originCode = shipment.origin?.code
+      const destCode = shipment.destination?.code
+
+      if (originCode && destCode && stationPositions[originCode] && stationPositions[destCode]) {
+        const origin = stationPositions[originCode]
+        const dest = stationPositions[destCode]
+
+        // Highlight origin and destination
+        ctx.fillStyle = "#4CAF50"
+        ctx.beginPath()
+        ctx.arc(origin.x, origin.y, 8, 0, Math.PI * 2)
+        ctx.fill()
+
+        ctx.fillStyle = "#F44336"
+        ctx.beginPath()
+        ctx.arc(dest.x, dest.y, 8, 0, Math.PI * 2)
+        ctx.fill()
+
+        // Draw route line
+        ctx.strokeStyle = "#3B82F6"
+        ctx.lineWidth = 3
+        ctx.beginPath()
+        ctx.moveTo(origin.x, origin.y)
+
+        // Create a simple path between origin and destination
+        // In a real app, this would follow the actual railway lines
+        if (Math.abs(origin.y - dest.y) < 10) {
+          // If on same horizontal line, direct path
+          ctx.lineTo(dest.x, dest.y)
+        } else {
+          // Otherwise, use intermediate points
+          const midX = (origin.x + dest.x) / 2
+          ctx.lineTo(midX, origin.y)
+          ctx.lineTo(midX, dest.y)
+          ctx.lineTo(dest.x, dest.y)
+        }
+
+        ctx.stroke()
+
+        // Draw train on the route
+        if (shipment.status === "In Transit") {
+          // Position train somewhere on the route based on departure/arrival times
+          const trainPos = 0.6 // 0 to 1, representing progress along route
+
+          let trainX, trainY
+          if (Math.abs(origin.y - dest.y) < 10) {
+            // If on same horizontal line
+            trainX = origin.x + (dest.x - origin.x) * trainPos
+            trainY = origin.y
+          } else {
+            // If using intermediate points
+            const midX = (origin.x + dest.x) / 2
+
+            if (trainPos < 0.33) {
+              // First segment
+              const segmentPos = trainPos * 3
+              trainX = origin.x + (midX - origin.x) * segmentPos
+              trainY = origin.y
+            } else if (trainPos < 0.66) {
+              // Second segment (vertical)
+              const segmentPos = (trainPos - 0.33) * 3
+              trainX = midX
+              trainY = origin.y + (dest.y - origin.y) * segmentPos
+            } else {
+              // Third segment
+              const segmentPos = (trainPos - 0.66) * 3
+              trainX = midX + (dest.x - midX) * segmentPos
+              trainY = dest.y
+            }
+          }
+
+          // Draw train icon
+          ctx.fillStyle = "#3B82F6"
+          ctx.beginPath()
+          ctx.moveTo(trainX - 10, trainY - 5)
+          ctx.lineTo(trainX + 10, trainY - 5)
+          ctx.lineTo(trainX + 10, trainY + 5)
+          ctx.lineTo(trainX - 10, trainY + 5)
+          ctx.closePath()
+          ctx.fill()
+
+          // Draw train windows
+          ctx.fillStyle = "#fff"
+          ctx.fillRect(trainX - 7, trainY - 3, 3, 2)
+          ctx.fillRect(trainX - 2, trainY - 3, 3, 2)
+          ctx.fillRect(trainX + 3, trainY - 3, 3, 2)
+        }
+
+        // Add labels
+        ctx.font = "bold 14px Arial"
+        ctx.fillStyle = "#000"
+        ctx.fillText("Origin: " + shipment.origin.name, 20, 30)
+        ctx.fillText("Destination: " + shipment.destination.name, 20, 50)
+        ctx.fillText("Status: " + shipment.status, 20, 70)
+        ctx.fillText("Cargo: " + shipment.commodity.name, 20, 90)
       }
     }
-  }, [selectedCargoId])
+  }
 
-  // Animation for trains
-  useEffect(() => {
-    if (isLoaded) {
-      const interval = setInterval(() => {
-        // In a real app, this would update positions based on real-time data
-        // For this demo, we'll just keep the static positions
-      }, 1000)
-
-      return () => clearInterval(interval)
-    }
-  }, [isLoaded])
-
-  if (!isLoaded) {
-    return (
-      <div className="relative w-full" style={{ height }}>
-        <div className="absolute inset-0 flex items-center justify-center bg-slate-100 rounded-lg">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
-        </div>
-      </div>
-    )
+  const handleShipmentChange = (value: string) => {
+    setSelectedShipment(value)
   }
 
   return (
-    <div className="relative w-full overflow-hidden rounded-lg bg-slate-100" style={{ height }}>
-      <div className="absolute top-2 left-2 z-10 bg-white/80 p-2 rounded-md text-sm">
-        <div className="font-semibold mb-1">Railway Routes</div>
-        {railwayRoutes.map((route) => (
-          <div key={route.id} className="flex items-center mb-1">
-            <div className="w-3 h-3 rounded-full mr-2" style={{ backgroundColor: route.color }}></div>
-            <span>{route.name}</span>
+    <Card className="w-full">
+      <CardHeader>
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="flex items-center">
+              <MapPin className="mr-2 h-5 w-5" />
+              Cargo Tracking Map
+            </CardTitle>
+            <CardDescription>Real-time visualization of cargo shipments on railway network.</CardDescription>
           </div>
-        ))}
-      </div>
 
-      {hoveredStation && (
-        <div className="absolute top-2 right-2 z-10 bg-white/80 p-2 rounded-md text-sm">
-          <div className="font-semibold">{hoveredStation.name}</div>
+          {showAllShipments && shipments.length > 0 && (
+            <div className="w-[200px]">
+              <Select value={selectedShipment || undefined} onValueChange={handleShipmentChange}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select shipment" />
+                </SelectTrigger>
+                <SelectContent>
+                  {shipments.map((shipment) => (
+                    <SelectItem key={shipment.id} value={shipment.id}>
+                      {shipment.reference_number}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          )}
         </div>
-      )}
-
-      <svg ref={svgRef} width="100%" height="100%" viewBox="0 0 800 400" className="absolute inset-0">
-        {/* Draw railway routes */}
-        {railwayRoutes.map((route) => (
-          <path
-            key={route.id}
-            d={route.path}
-            stroke={route.color}
-            strokeWidth="6"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeDasharray="1 0"
-          />
-        ))}
-
-        {/* Draw stations */}
-        {stations.map((station) => (
-          <g
-            key={station.id}
-            transform={`translate(${station.x}, ${station.y})`}
-            onMouseEnter={() => setHoveredStation(station)}
-            onMouseLeave={() => setHoveredStation(null)}
-            className="cursor-pointer"
-          >
-            <circle r="8" fill="white" stroke="#374151" strokeWidth="2" />
-            <text x="0" y="25" textAnchor="middle" fontSize="10" fill="#374151" className="pointer-events-none">
-              {station.name.split(" ")[0]}
-            </text>
-          </g>
-        ))}
-
-        {/* Draw cargo shipments */}
-        {cargoShipments.map((cargo) => {
-          const isSelected = selectedCargo?.id === cargo.id
-          return (
-            <g
-              key={cargo.id}
-              transform={`translate(${cargo.currentPosition.x}, ${cargo.currentPosition.y})`}
-              className={`cursor-pointer transition-transform duration-300 ${isSelected ? "scale-125" : ""}`}
-              onClick={() => setSelectedCargo(cargo)}
-            >
-              <circle
-                r="12"
-                fill={isSelected ? "#3b82f6" : "white"}
-                stroke={isSelected ? "#1e40af" : "#374151"}
-                strokeWidth="2"
-              />
-              <Train
-                className={`h-4 w-4 absolute ${isSelected ? "text-white" : "text-gray-700"}`}
-                style={{ transform: "translate(-8px, -8px)" }}
-              />
-            </g>
-          )
-        })}
-      </svg>
-
-      {selectedCargo && (
-        <div className="absolute bottom-2 left-2 right-2 bg-white/90 p-3 rounded-md shadow-md">
-          <div className="flex items-center justify-between mb-2">
-            <div className="font-semibold flex items-center">
-              <Package className="h-4 w-4 mr-1" />
-              {selectedCargo.type} Shipment
-            </div>
-            <button onClick={() => setSelectedCargo(null)} className="text-gray-500 hover:text-gray-700">
-              ×
-            </button>
-          </div>
-          <div className="grid grid-cols-2 gap-2 text-sm">
-            <div>
-              <span className="text-gray-500">Origin:</span> {selectedCargo.origin}
-            </div>
-            <div>
-              <span className="text-gray-500">Destination:</span> {selectedCargo.destination}
+      </CardHeader>
+      <CardContent>
+        {loading ? (
+          <div className="h-[400px] w-full flex items-center justify-center bg-slate-100 rounded-md">
+            <div className="text-center">
+              <Train className="h-10 w-10 mx-auto mb-2 text-slate-400 animate-pulse" />
+              <p className="text-slate-500">Loading map data...</p>
             </div>
           </div>
-          <div className="mt-2">
-            <div className="flex justify-between text-xs mb-1">
-              <span>Progress</span>
-              <span>{selectedCargo.progress}%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2">
-              <div className="bg-primary h-2 rounded-full" style={{ width: `${selectedCargo.progress}%` }}></div>
+        ) : shipments.length === 0 ? (
+          <div className="h-[400px] w-full flex items-center justify-center bg-slate-100 rounded-md">
+            <div className="text-center">
+              <Package className="h-10 w-10 mx-auto mb-2 text-slate-400" />
+              <p className="text-slate-500">No shipments found to display on map.</p>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        ) : (
+          <div className="relative">
+            <div ref={mapRef} className="h-[400px] w-full rounded-md overflow-hidden" />
+
+            {selectedShipment && (
+              <div className="absolute bottom-4 right-4 bg-white p-3 rounded-md shadow-md">
+                <div className="flex items-center space-x-2 mb-2">
+                  <Badge className="bg-green-100 text-green-800">Origin</Badge>
+                  <Badge className="bg-red-100 text-red-800">Destination</Badge>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Badge className="bg-blue-100 text-blue-800">
+                    <Train className="h-3 w-3 mr-1" />
+                    Train Position
+                  </Badge>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+      </CardContent>
+    </Card>
   )
 }

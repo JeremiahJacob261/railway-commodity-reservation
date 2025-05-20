@@ -1,39 +1,27 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { AdminSidebar } from "@/components/admin-sidebar"
-import { OperatorSidebar } from "@/components/operator-sidebar"
-import { ShipperSidebar } from "@/components/shipper-sidebar"
+import { Button } from "@/components/ui/button"
+import { useState, type ReactNode } from "react"
 
 interface MobileSidebarProps {
-  role: "admin" | "operator" | "shipper"
+  children: ReactNode
 }
 
-export function MobileSidebar({ role }: MobileSidebarProps) {
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  if (!isMounted) {
-    return null
-  }
+export function MobileSidebar({ children }: MobileSidebarProps) {
+  const [open, setOpen] = useState(false)
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden">
-          <Menu />
+        <Button variant="ghost" size="icon" className="md:hidden h-full aspect-square rounded-none">
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="p-0">
-        {role === "admin" && <AdminSidebar />}
-        {role === "operator" && <OperatorSidebar />}
-        {role === "shipper" && <ShipperSidebar />}
+        {children}
       </SheetContent>
     </Sheet>
   )
