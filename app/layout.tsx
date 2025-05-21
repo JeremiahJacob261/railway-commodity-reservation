@@ -3,13 +3,14 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { NotificationProvider } from "@/context/notification-context"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "RailCargo - Railway Commodity Management System",
   description: "A comprehensive railway cargo management platform for efficient commodity transport",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -21,7 +22,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+          <NotificationProvider>
+            {children}
+            <Toaster />
+          </NotificationProvider>
         </ThemeProvider>
       </body>
     </html>

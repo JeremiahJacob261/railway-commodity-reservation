@@ -15,6 +15,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { format } from "date-fns"
 import { CalendarIcon, Package, Train } from "lucide-react"
 import { cn } from "@/lib/utils"
+import  { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/lib/supabase"
 import { useRouter } from "next/navigation"
 
@@ -24,7 +25,7 @@ export default function NewShipmentPage() {
   const [stations, setStations] = useState([])
   const [commodities, setCommodities] = useState([])
   const [departureDate, setDepartureDate] = useState<Date>()
-
+  const { toast } = useToast();
   // Fetch stations and commodities on component mount
   useState(() => {
     const fetchData = async () => {
@@ -59,7 +60,7 @@ export default function NewShipmentPage() {
     try {
       const { error } = await supabase.from("rail_shipments").insert({
         reference_number: referenceNumber,
-        shipper_id: "00000000-0000-0000-0000-000000000000", // Replace with actual user ID in production
+        shipper_id: "8ff64485-0b1c-4e63-8429-01151101d33f", // Replace with actual user ID in production
         origin_id: originId,
         destination_id: destinationId,
         commodity_id: commodityId,
@@ -70,7 +71,12 @@ export default function NewShipmentPage() {
       })
 
       if (error) throw error
-
+      // Show success notification
+      toast({
+        title: "Shipment Created",
+        description: `Your shipment has been created successfully with reference number ${referenceNumber}.`,
+        variant: "default",
+      });
       // Redirect to tracking page on success
       router.push("/shipper/tracking")
       router.refresh()
