@@ -29,12 +29,13 @@ export function RecentShipments() {
   )
 }
 
+// ...existing code...
 const recentShipments = [
   {
     id: "1",
     commodity: "Coal",
-    origin: "Chicago",
-    destination: "Pittsburgh",
+    origin: "Lagos",
+    destination: "Warri",
     status: "In Transit",
     statusColor: "bg-blue-500",
     statusBg: "bg-blue-100",
@@ -43,8 +44,8 @@ const recentShipments = [
   {
     id: "2",
     commodity: "Grain",
-    origin: "Minneapolis",
-    destination: "Kansas City",
+    origin: "Abuja",
+    destination: "Kano",
     status: "Loading",
     statusColor: "bg-yellow-500",
     statusBg: "bg-yellow-100",
@@ -53,8 +54,8 @@ const recentShipments = [
   {
     id: "3",
     commodity: "Steel",
-    origin: "Cleveland",
-    destination: "Detroit",
+    origin: "Jos",
+    destination: "Enugu",
     status: "Delivered",
     statusColor: "bg-green-500",
     statusBg: "bg-green-100",
@@ -63,8 +64,8 @@ const recentShipments = [
   {
     id: "4",
     commodity: "Lumber",
-    origin: "Portland",
-    destination: "Salt Lake City",
+    origin: "Kaduna",
+    destination: "Maiduguri",
     status: "Pending",
     statusColor: "bg-gray-500",
     statusBg: "bg-gray-100",
@@ -73,11 +74,12 @@ const recentShipments = [
   {
     id: "5",
     commodity: "Automobiles",
-    origin: "Detroit",
-    destination: "Nashville",
+    origin: "Enugu",
+    destination: "Ibadan",
     status: "In Transit",
     statusColor: "bg-blue-500",
     statusBg: "bg-blue-100",
     statusText: "text-blue-800",
   },
 ]
+// ...existing code...

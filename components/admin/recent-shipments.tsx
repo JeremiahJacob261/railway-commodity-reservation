@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 
+// ...existing code...
 export function RecentShipments() {
   return (
     <div className="space-y-8">
@@ -11,7 +12,7 @@ export function RecentShipments() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">Jackson Miller</p>
-          <p className="text-sm text-muted-foreground">Coal: Chicago → Detroit</p>
+          <p className="text-sm text-muted-foreground">Coal: Lagos → Enugu</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -26,7 +27,7 @@ export function RecentShipments() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">Sophia Anderson</p>
-          <p className="text-sm text-muted-foreground">Grain: Kansas City → Houston</p>
+          <p className="text-sm text-muted-foreground">Grain: Port Harcourt → Kano</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -41,7 +42,7 @@ export function RecentShipments() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">William Kim</p>
-          <p className="text-sm text-muted-foreground">Lumber: Portland → San Francisco</p>
+          <p className="text-sm text-muted-foreground">Lumber: Kaduna → Ibadan</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -56,7 +57,7 @@ export function RecentShipments() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">Emma Martinez</p>
-          <p className="text-sm text-muted-foreground">Steel: Pittsburgh → Cleveland</p>
+          <p className="text-sm text-muted-foreground">Steel: Warri → Jos</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -71,7 +72,7 @@ export function RecentShipments() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">Liam Johnson</p>
-          <p className="text-sm text-muted-foreground">Chemicals: Houston → New Orleans</p>
+          <p className="text-sm text-muted-foreground">Chemicals: Lagos → Benin City</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -82,3 +83,4 @@ export function RecentShipments() {
     </div>
   )
 }
+// ...existing code...

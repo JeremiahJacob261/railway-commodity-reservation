@@ -8,14 +8,15 @@ import { ChevronLeft, ChevronRight, Download, Search, Train, AlertCircle } from 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Progress } from "@/components/ui/progress"
 
+// ...existing code...
 const trains = [
   {
     id: "TRN-001",
-    name: "Eastern Express",
+    name: "Lagos Express",
     type: "Freight",
     operator: "Alex Johnson",
     status: "In Service",
-    location: "Between Detroit and Cleveland",
+    location: "Between Enugu and Jos",
     capacity: "200 tons",
     currentLoad: "180 tons",
     loadPercentage: 90,
@@ -24,11 +25,11 @@ const trains = [
   },
   {
     id: "TRN-002",
-    name: "Western Hauler",
+    name: "Northern Hauler",
     type: "Freight",
     operator: "Maria Garcia",
     status: "In Service",
-    location: "Denver Exchange",
+    location: "Kano Exchange",
     capacity: "250 tons",
     currentLoad: "200 tons",
     loadPercentage: 80,
@@ -37,11 +38,11 @@ const trains = [
   },
   {
     id: "TRN-003",
-    name: "Northern Carrier",
+    name: "Eastern Carrier",
     type: "Freight",
     operator: "David Lee",
     status: "In Service",
-    location: "Between Minneapolis and Omaha",
+    location: "Between Abuja and Kaduna",
     capacity: "180 tons",
     currentLoad: "160 tons",
     loadPercentage: 89,
@@ -54,7 +55,7 @@ const trains = [
     type: "Mixed",
     operator: "Sarah Wilson",
     status: "Maintenance",
-    location: "Nashville Freight Yard",
+    location: "Ibadan Freight Yard",
     capacity: "150 tons",
     currentLoad: "0 tons",
     loadPercentage: 0,
@@ -63,11 +64,11 @@ const trains = [
   },
   {
     id: "TRN-005",
-    name: "Midwest Connector",
+    name: "Central Connector",
     type: "Freight",
     operator: "Michael Brown",
     status: "In Service",
-    location: "Between Chicago and Detroit",
+    location: "Between Lagos and Enugu",
     capacity: "220 tons",
     currentLoad: "190 tons",
     loadPercentage: 86,
@@ -76,11 +77,11 @@ const trains = [
   },
   {
     id: "TRN-006",
-    name: "Pacific Runner",
+    name: "Niger Delta Runner",
     type: "Freight",
     operator: "Jennifer Davis",
     status: "Loading",
-    location: "Portland Terminal",
+    location: "Port Harcourt Terminal",
     capacity: "240 tons",
     currentLoad: "120 tons",
     loadPercentage: 50,
@@ -89,11 +90,11 @@ const trains = [
   },
   {
     id: "TRN-007",
-    name: "Mountain Climber",
+    name: "Plateau Climber",
     type: "Freight",
     operator: "Robert Martinez",
     status: "In Service",
-    location: "Between Denver and Salt Lake",
+    location: "Between Kano and Maiduguri",
     capacity: "200 tons",
     currentLoad: "185 tons",
     loadPercentage: 93,
@@ -106,7 +107,7 @@ const trains = [
     type: "Mixed",
     operator: "Emily Taylor",
     status: "In Service",
-    location: "Portland Terminal",
+    location: "Kaduna Terminal",
     capacity: "180 tons",
     currentLoad: "150 tons",
     loadPercentage: 83,
@@ -115,11 +116,11 @@ const trains = [
   },
   {
     id: "TRN-009",
-    name: "Central Hauler",
+    name: "Middle Belt Hauler",
     type: "Freight",
     operator: "Daniel Thomas",
     status: "In Service",
-    location: "Between St. Louis and Nashville",
+    location: "Between Benin City and Ibadan",
     capacity: "230 tons",
     currentLoad: "210 tons",
     loadPercentage: 91,
@@ -128,11 +129,11 @@ const trains = [
   },
   {
     id: "TRN-010",
-    name: "Great Plains Express",
+    name: "Savannah Express",
     type: "Freight",
     operator: "Unassigned",
     status: "Out of Service",
-    location: "Kansas City Hub",
+    location: "Port Harcourt Hub",
     capacity: "210 tons",
     currentLoad: "0 tons",
     loadPercentage: 0,
@@ -140,6 +141,7 @@ const trains = [
     maintenanceStatus: "Major Repairs Needed",
   },
 ]
+// ...existing code...
 
 const statusColorMap: Record<string, string> = {
   "In Service": "bg-green-100 text-green-800 hover:bg-green-100/80",

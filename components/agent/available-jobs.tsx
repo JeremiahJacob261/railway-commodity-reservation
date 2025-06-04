@@ -13,15 +13,15 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-
+// ...existing code...
 const jobs = [
   {
     id: "JOB-001",
     customer: "Jackson Miller",
-    pickup: "123 Main St, Anytown, USA",
-    dropoff: "456 Oak Ave, Somewhere, USA",
-    distance: "3.2 miles",
-    time: "~15 min",
+    pickup: "15 Victoria Island, Lagos, Nigeria",
+    dropoff: "22 Independence Way, Kaduna, Nigeria",
+    distance: "520 km",
+    time: "~8 hours",
     pay: "$12.50",
     packageType: "Small",
     weight: "2.5 lbs",
@@ -30,10 +30,10 @@ const jobs = [
   {
     id: "JOB-002",
     customer: "Sophia Anderson",
-    pickup: "789 Pine St, Nowhere, USA",
-    dropoff: "321 Maple Dr, Everywhere, USA",
-    distance: "5.7 miles",
-    time: "~25 min",
+    pickup: "8 Ogbomoso Street, Ibadan, Nigeria",
+    dropoff: "31 Niger Bridge Road, Onitsha, Nigeria",
+    distance: "320 km",
+    time: "~5 hours",
     pay: "$18.75",
     packageType: "Medium",
     weight: "8.3 lbs",
@@ -42,10 +42,10 @@ const jobs = [
   {
     id: "JOB-003",
     customer: "William Kim",
-    pickup: "555 Cedar Ln, Anywhere, USA",
-    dropoff: "777 Birch Rd, Someplace, USA",
-    distance: "7.1 miles",
-    time: "~30 min",
+    pickup: "12 Ahmadu Bello Way, Abuja, Nigeria",
+    dropoff: "5 New Market Road, Enugu, Nigeria",
+    distance: "290 km",
+    time: "~4.5 hours",
     pay: "$22.00",
     packageType: "Large",
     weight: "15.6 lbs",
@@ -54,10 +54,10 @@ const jobs = [
   {
     id: "JOB-004",
     customer: "Emma Martinez",
-    pickup: "888 Elm St, Othertown, USA",
-    dropoff: "999 Walnut Ave, Elsewhere, USA",
-    distance: "4.5 miles",
-    time: "~20 min",
+    pickup: "18 Sapele Road, Benin City, Nigeria",
+    dropoff: "9 Bompai Road, Kano, Nigeria",
+    distance: "670 km",
+    time: "~10 hours",
     pay: "$15.25",
     packageType: "Medium",
     weight: "7.2 lbs",
@@ -66,16 +66,17 @@ const jobs = [
   {
     id: "JOB-005",
     customer: "Liam Johnson",
-    pickup: "444 Spruce St, Noplace, USA",
-    dropoff: "222 Fir Ln, Somewhereelse, USA",
-    distance: "9.3 miles",
-    time: "~40 min",
+    pickup: "25 Aba Road, Port Harcourt, Nigeria",
+    dropoff: "14 Yakubu Gowon Way, Jos, Nigeria",
+    distance: "450 km",
+    time: "~7 hours",
     pay: "$27.50",
     packageType: "Extra Large",
     weight: "32.1 lbs",
     category: "heavy",
   },
 ]
+// ...existing code...
 
 const categoryColorMap: Record<string, string> = {
   light: "bg-green-100 text-green-800 hover:bg-green-100/80",

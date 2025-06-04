@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 
+// ...existing code...
 export function RecentDeliveries() {
   return (
     <div className="space-y-8">
@@ -11,7 +12,7 @@ export function RecentDeliveries() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">Jackson Miller</p>
-          <p className="text-sm text-muted-foreground">123 Main St → 456 Oak Ave</p>
+          <p className="text-sm text-muted-foreground">15 Victoria Island → 22 Independence Way</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -26,7 +27,7 @@ export function RecentDeliveries() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">Sophia Anderson</p>
-          <p className="text-sm text-muted-foreground">789 Pine St → 321 Maple Dr</p>
+          <p className="text-sm text-muted-foreground">8 Ogbomoso Street → 31 Niger Bridge Road</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -41,7 +42,7 @@ export function RecentDeliveries() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">William Kim</p>
-          <p className="text-sm text-muted-foreground">555 Cedar Ln → 777 Birch Rd</p>
+          <p className="text-sm text-muted-foreground">12 Ahmadu Bello Way → 5 New Market Road</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -56,7 +57,7 @@ export function RecentDeliveries() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">Emma Martinez</p>
-          <p className="text-sm text-muted-foreground">888 Elm St → 999 Walnut Ave</p>
+          <p className="text-sm text-muted-foreground">18 Sapele Road → 9 Bompai Road</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -71,7 +72,7 @@ export function RecentDeliveries() {
         </Avatar>
         <div className="ml-4 space-y-1">
           <p className="text-sm font-medium leading-none">Liam Johnson</p>
-          <p className="text-sm text-muted-foreground">444 Spruce St → 222 Fir Ln</p>
+          <p className="text-sm text-muted-foreground">25 Aba Road → 14 Yakubu Gowon Way</p>
         </div>
         <div className="ml-auto font-medium">
           <Badge className="ml-auto" variant="outline">
@@ -82,3 +83,4 @@ export function RecentDeliveries() {
     </div>
   )
 }
+// ...existing code...
