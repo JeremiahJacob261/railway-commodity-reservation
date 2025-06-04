@@ -102,18 +102,21 @@ export function CargoTrackingMap({ shipmentId, showAllShipments = false }: Track
     ctx.stroke()
 
     // Draw stations
+  // ...existing code...
     const stationPositions: Record<string, { x: number; y: number }> = {
-      CHI: { x: 100, y: 200 },
-      PIT: { x: 700, y: 200 },
-      KCY: { x: 150, y: 100 },
-      PDX: { x: 150, y: 300 },
-      MSP: { x: 300, y: 50 },
-      NSH: { x: 300, y: 350 },
-      DET: { x: 450, y: 150 },
-      CLE: { x: 450, y: 250 },
-      DEN: { x: 600, y: 100 },
-      SLC: { x: 600, y: 300 },
+      LAG: { x: 100, y: 400 }, // Lagos
+      KAN: { x: 500, y: 150 }, // Kano
+      ABJ: { x: 300, y: 250 }, // Abuja
+      PH: { x: 200, y: 450 },  // Port Harcourt
+      IBD: { x: 150, y: 350 }, // Ibadan
+      ENU: { x: 350, y: 300 }, // Enugu
+      JOS: { x: 400, y: 200 }, // Jos
+      KAD: { x: 450, y: 180 }, // Kaduna
+      MDG: { x: 700, y: 100 }, // Maiduguri
+      WAR: { x: 180, y: 420 }, // Warri
+      BEN: { x: 220, y: 380 }, // Benin City
     }
+// ...existing code...
 
     // Draw all stations
     Object.entries(stationPositions).forEach(([code, pos]) => {
