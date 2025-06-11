@@ -1,6 +1,6 @@
 "use client"
 
-import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "@/components/ui/chart"
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const data = [
@@ -28,7 +28,7 @@ export function RevenueAnalytics() {
             <CardDescription>Year to date</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$631,500</div>
+            <div className="text-2xl font-bold">₦631,500</div>
             <p className="text-xs text-muted-foreground">+12.5% from last year</p>
           </CardContent>
         </Card>
@@ -38,8 +38,8 @@ export function RevenueAnalytics() {
             <CardDescription>Per delivery</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$24.75</div>
-            <p className="text-xs text-muted-foreground">+$1.50 from last month</p>
+            <div className="text-2xl font-bold">₦24,750</div>
+            <p className="text-xs text-muted-foreground">+₦1,500 from last month</p>
           </CardContent>
         </Card>
         <Card>

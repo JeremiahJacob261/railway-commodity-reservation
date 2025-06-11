@@ -8,7 +8,7 @@ const deliveries = [
 		from: "15 Victoria Island, Lagos, Nigeria",
 		to: "22 Independence Way, Kaduna, Nigeria",
 		status: "In Transit",
-		cost: "$45.00",
+		cost: "₦45,000",
 	},
 	{
 		id: "ORD-002",
@@ -16,7 +16,7 @@ const deliveries = [
 		from: "8 Ogbomoso Street, Ibadan, Nigeria",
 		to: "31 Niger Bridge Road, Onitsha, Nigeria",
 		status: "Delivered",
-		cost: "$28.50",
+		cost: "₦28,500",
 	},
 	{
 		id: "ORD-003",
@@ -24,7 +24,7 @@ const deliveries = [
 		from: "12 Ahmadu Bello Way, Abuja, Nigeria",
 		to: "5 New Market Road, Enugu, Nigeria",
 		status: "Delivered",
-		cost: "$32.75",
+		cost: "₦32,750",
 	},
 	{
 		id: "ORD-004",
@@ -32,7 +32,7 @@ const deliveries = [
 		from: "18 Sapele Road, Benin City, Nigeria",
 		to: "9 Bompai Road, Kano, Nigeria",
 		status: "Cancelled",
-		cost: "$0.00",
+		cost: "₦0",
 	},
 	{
 		id: "ORD-005",
@@ -40,7 +40,7 @@ const deliveries = [
 		from: "25 Aba Road, Port Harcourt, Nigeria",
 		to: "14 Yakubu Gowon Way, Jos, Nigeria",
 		status: "Delivered",
-		cost: "$41.20",
+		cost: "₦41,200",
 	},
 	{
 		id: "ORD-006",
@@ -48,7 +48,7 @@ const deliveries = [
 		from: "7 Allen Avenue, Ikeja, Nigeria",
 		to: "19 Sokoto Road, Kaduna, Nigeria",
 		status: "Delivered",
-		cost: "$19.75",
+		cost: "₦19,750",
 	},
 	{
 		id: "ORD-007",
@@ -56,7 +56,7 @@ const deliveries = [
 		from: "11 Effurun Road, Warri, Nigeria",
 		to: "6 Ramat Road, Maiduguri, Nigeria",
 		status: "Delivered",
-		cost: "$31.25",
+		cost: "₦31,250",
 	},
 ]
 
