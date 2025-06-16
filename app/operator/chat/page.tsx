@@ -56,7 +56,7 @@ export default function OperatorChatPage() {
                 <AvatarFallback>JM</AvatarFallback>
               </Avatar>
               <div>
-                <CardTitle>Jackson Miller</CardTitle>
+                <CardTitle>Jackson Akpan</CardTitle>
                 <p className="text-sm text-muted-foreground">Shipper • Online</p>
               </div>
             </div>
@@ -92,14 +92,14 @@ export default function OperatorChatPage() {
 const contacts = [
   {
     id: "1",
-    name: "Jackson Miller",
+    name: "Jackson Akpan",
     role: "Shipper",
     initials: "JM",
     unread: 2,
   },
   {
     id: "2",
-    name: "Sophia Anderson",
+    name: "Sophia Jamiu",
     role: "Shipper",
     initials: "SA",
     unread: 0,
@@ -113,7 +113,7 @@ const contacts = [
   },
   {
     id: "4",
-    name: "Maria Garcia",
+    name: "Maria Okoro",
     role: "Operator",
     initials: "MG",
     unread: 0,
@@ -136,7 +136,7 @@ const messages = [
   {
     sender: "me",
     content:
-      "Hello Jackson. Yes, your shipment is currently being loaded at Chicago Terminal. It's about 60% complete.",
+      "Hello Jackson. Yes, your shipment is currently being loaded at Garki Terminal. It's about 60% complete.",
     time: "10:32 AM",
   },
   {
@@ -147,7 +147,7 @@ const messages = [
   {
     sender: "me",
     content:
-      "We're on schedule for a 2:00 PM departure today. The train should arrive in Pittsburgh around 10:00 AM tomorrow.",
+      "We're on schedule for a 2:00 PM departure today. The train should arrive in Onitsha around 10:00 AM tomorrow.",
     time: "10:35 AM",
   },
   {
@@ -158,7 +158,7 @@ const messages = [
   {
     sender: "me",
     content:
-      "Yes, you'll receive an automatic notification when the train departs Chicago and another when it arrives in Pittsburgh.",
+      "Yes, you'll receive an automatic notification when the train departs Garki and another when it arrives in Onitsha.",
     time: "10:38 AM",
   },
   {

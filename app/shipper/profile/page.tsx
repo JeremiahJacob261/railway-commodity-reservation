@@ -31,7 +31,7 @@ export default function ShipperProfilePage() {
             <Avatar className="h-24 w-24 mb-4">
               <AvatarFallback>JM</AvatarFallback>
             </Avatar>
-            <h3 className="text-xl font-bold">Jackson Miller</h3>
+            <h3 className="text-xl font-bold">Jackson Akpan</h3>
             <p className="text-muted-foreground">Shipper</p>
             <div className="flex flex-wrap gap-2 mt-4 justify-center">
               <Badge variant="outline" className="bg-blue-100 text-blue-800">
@@ -78,7 +78,7 @@ export default function ShipperProfilePage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="fullName">Full Name</Label>
-                    <Input id="fullName" defaultValue="Jackson Miller" />
+                    <Input id="fullName" defaultValue="Jackson Akpan" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
@@ -94,7 +94,7 @@ export default function ShipperProfilePage() {
                   </div>
                   <div className="space-y-2 md:col-span-2">
                     <Label htmlFor="address">Address</Label>
-                    <Input id="address" defaultValue="456 Commerce St, Chicago, IL 60607" />
+                    <Input id="address" defaultValue="456 Commerce St, Garki, IL 60607" />
                   </div>
                 </div>
                 <Button>Save Changes</Button>
@@ -104,7 +104,7 @@ export default function ShipperProfilePage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="companyName">Company Name</Label>
-                    <Input id="companyName" defaultValue="Miller Industries" />
+                    <Input id="companyName" defaultValue="Akpan Industries" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="taxId">Tax ID</Label>
@@ -116,17 +116,17 @@ export default function ShipperProfilePage() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="website">Website</Label>
-                    <Input id="website" defaultValue="www.millerindustries.com" />
+                    <Input id="website" defaultValue="www.Akpanindustries.com" />
                   </div>
                   <div className="space-y-2 md:col-span-2">
                     <Label htmlFor="companyAddress">Company Address</Label>
-                    <Input id="companyAddress" defaultValue="789 Industrial Pkwy, Chicago, IL 60607" />
+                    <Input id="companyAddress" defaultValue="789 Industrial Pkwy, Garki, IL 60607" />
                   </div>
                   <div className="space-y-2 md:col-span-2">
                     <Label htmlFor="description">Company Description</Label>
                     <Textarea
                       id="description"
-                      defaultValue="Miller Industries is a leading manufacturer of industrial equipment and components, specializing in heavy machinery for construction and mining operations."
+                      defaultValue="Akpan Industries is a leading manufacturer of industrial equipment and components, specializing in heavy machinery for construction and mining operations."
                     />
                   </div>
                 </div>

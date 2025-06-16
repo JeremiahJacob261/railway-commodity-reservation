@@ -35,7 +35,7 @@ const logs = [
   {
     id: "LOG-004",
     timestamp: "2025-01-10 11:30:05",
-    user: "Customer (jackson.miller@example.com)",
+    user: "Customer (jackson.Akpan@example.com)",
     action: "Order Creation",
     details: "Created new order ORD-012",
     level: "Info",
@@ -75,7 +75,7 @@ const logs = [
   {
     id: "LOG-009",
     timestamp: "2025-01-10 06:20:40",
-    user: "Agent (maria.garcia@example.com)",
+    user: "Agent (maria.Okoro@example.com)",
     action: "Delivery Assignment",
     details: "Accepted delivery job for order ORD-008",
     level: "Info",

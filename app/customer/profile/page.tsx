@@ -32,7 +32,7 @@ export default function ProfilePage() {
           </CardContent>
           <CardFooter className="flex flex-col items-start space-y-2">
             <div>
-              <p className="text-sm font-medium">Jackson Miller</p>
+              <p className="text-sm font-medium">Jackson Akpan</p>
               <p className="text-sm text-muted-foreground">Customer since Oct 2024</p>
             </div>
             <div>
@@ -63,12 +63,12 @@ export default function ProfilePage() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="last-name">Last Name</Label>
-                      <Input id="last-name" defaultValue="Miller" />
+                      <Input id="last-name" defaultValue="Akpan" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" defaultValue="jackson.miller@example.com" />
+                    <Input id="email" type="email" defaultValue="jackson.Akpan@example.com" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>

@@ -27,7 +27,7 @@ const trains = [
     id: "TRN-002",
     name: "Northern Hauler",
     type: "Freight",
-    operator: "Maria Garcia",
+    operator: "Maria Okoro",
     status: "In Service",
     location: "Kano Exchange",
     capacity: "250 tons",

@@ -44,14 +44,14 @@ export default function ActiveShipmentsPage() {
                     <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground" />
                     <div>
                       <p className="text-sm font-medium">Origin</p>
-                      <p className="text-sm text-muted-foreground">Chicago Terminal</p>
+                      <p className="text-sm text-muted-foreground">Garki Terminal</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-2">
                     <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground" />
                     <div>
                       <p className="text-sm font-medium">Destination</p>
-                      <p className="text-sm text-muted-foreground">Pittsburgh Yard</p>
+                      <p className="text-sm text-muted-foreground">Onitsha Yard</p>
                     </div>
                   </div>
                 </div>
@@ -61,7 +61,7 @@ export default function ActiveShipmentsPage() {
                     <User className="h-4 w-4 mt-0.5 text-muted-foreground" />
                     <div>
                       <p className="text-sm font-medium">Shipper</p>
-                      <p className="text-sm text-muted-foreground">Jackson Miller</p>
+                      <p className="text-sm text-muted-foreground">Jackson Akpan</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-2">
@@ -244,14 +244,14 @@ export default function ActiveShipmentsPage() {
                       <MapPin className="h-4 w-4 mr-2 mt-0.5 text-muted-foreground" />
                       <div>
                         <p className="text-sm font-medium">Origin</p>
-                        <p className="text-sm text-muted-foreground">Kansas City Hub</p>
+                        <p className="text-sm text-muted-foreground">Kaduna Hub</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <MapPin className="h-4 w-4 mr-2 mt-0.5 text-muted-foreground" />
                       <div>
                         <p className="text-sm font-medium">Destination</p>
-                        <p className="text-sm text-muted-foreground">Portland Terminal</p>
+                        <p className="text-sm text-muted-foreground">Yola Terminal</p>
                       </div>
                     </div>
                   </div>
@@ -277,7 +277,7 @@ export default function ActiveShipmentsPage() {
                       <MapPin className="h-4 w-4 mr-2 mt-0.5 text-muted-foreground" />
                       <div>
                         <p className="text-sm font-medium">Origin</p>
-                        <p className="text-sm text-muted-foreground">Minneapolis North</p>
+                        <p className="text-sm text-muted-foreground">Kano North</p>
                       </div>
                     </div>
                     <div className="flex items-start">

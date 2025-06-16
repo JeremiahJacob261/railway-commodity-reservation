@@ -61,7 +61,7 @@ export default function ActiveDeliveriesPage() {
                     <User className="h-4 w-4 mt-0.5 text-muted-foreground" />
                     <div>
                       <p className="text-sm font-medium">Customer</p>
-                      <p className="text-sm text-muted-foreground">Jackson Miller</p>
+                      <p className="text-sm text-muted-foreground">Jackson Akpan</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-2">

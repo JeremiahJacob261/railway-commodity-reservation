@@ -11,7 +11,7 @@ export function RecentShipments() {
           <AvatarFallback>JM</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">Jackson Miller</p>
+          <p className="text-sm font-medium leading-none">Jackson Akpan</p>
           <p className="text-sm text-muted-foreground">Coal: Lagos → Enugu</p>
         </div>
         <div className="ml-auto font-medium">
@@ -26,7 +26,7 @@ export function RecentShipments() {
           <AvatarFallback>SA</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">Sophia Anderson</p>
+          <p className="text-sm font-medium leading-none">Sophia Jamiu</p>
           <p className="text-sm text-muted-foreground">Grain: Port Harcourt → Kano</p>
         </div>
         <div className="ml-auto font-medium">

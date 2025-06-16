@@ -12,7 +12,7 @@ const transactions = [
   {
     id: "TRX-001",
     orderId: "ORD-001",
-    customer: "Jackson Miller",
+    customer: "Jackson Akpan",
     amount: "$24.99",
     method: "Credit Card",
     date: "2025-01-10",
@@ -21,7 +21,7 @@ const transactions = [
   {
     id: "TRX-002",
     orderId: "ORD-002",
-    customer: "Sophia Anderson",
+    customer: "Sophia Jamiu",
     amount: "$42.50",
     method: "PayPal",
     date: "2025-01-09",
@@ -112,7 +112,7 @@ const payouts = [
   },
   {
     id: "PAY-002",
-    agent: "Maria Garcia",
+    agent: "Maria Okoro",
     amount: "$1,180.75",
     deliveries: 38,
     date: "2025-01-15",

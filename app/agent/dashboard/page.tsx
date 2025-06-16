@@ -71,7 +71,7 @@ export default function AgentDashboard() {
                     </div>
                     <div className="flex-1 space-y-1">
                       <p className="text-sm font-medium leading-none">Pickup: 123 Main St</p>
-                      <p className="text-sm text-muted-foreground">Customer: Jackson Miller</p>
+                      <p className="text-sm text-muted-foreground">Customer: Jackson Akpan</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4 text-muted-foreground" />
@@ -84,7 +84,7 @@ export default function AgentDashboard() {
                     </div>
                     <div className="flex-1 space-y-1">
                       <p className="text-sm font-medium leading-none">Pickup: 456 Oak Ave</p>
-                      <p className="text-sm text-muted-foreground">Customer: Sophia Anderson</p>
+                      <p className="text-sm text-muted-foreground">Customer: Sophia Jamiu</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4 text-muted-foreground" />

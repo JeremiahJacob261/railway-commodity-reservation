@@ -34,7 +34,7 @@ const contacts: ChatContact[] = [
   },
   {
     id: "contact2",
-    name: "Maria Garcia",
+    name: "Maria Okoro",
     orderId: "ORD-002",
     lastMessage: "I've arrived at the pickup location and will be on my way shortly.",
     unread: false,

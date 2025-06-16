@@ -11,7 +11,7 @@ export function RecentDeliveries() {
           <AvatarFallback>JM</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">Jackson Miller</p>
+          <p className="text-sm font-medium leading-none">Jackson Akpan</p>
           <p className="text-sm text-muted-foreground">15 Victoria Island → 22 Independence Way</p>
         </div>
         <div className="ml-auto font-medium">
@@ -26,7 +26,7 @@ export function RecentDeliveries() {
           <AvatarFallback>SA</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">Sophia Anderson</p>
+          <p className="text-sm font-medium leading-none">Sophia Jamiu</p>
           <p className="text-sm text-muted-foreground">8 Ogbomoso Street → 31 Niger Bridge Road</p>
         </div>
         <div className="ml-auto font-medium">

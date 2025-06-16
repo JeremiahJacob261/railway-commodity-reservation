@@ -33,8 +33,8 @@ const shipmentHistory = [
   {
     id: "1",
     commodity: "Coal",
-    origin: "Chicago",
-    destination: "Pittsburgh",
+    origin: "Garki",
+    destination: "Onitsha",
     status: "Delivered",
     statusColor: "bg-green-500",
     statusBg: "bg-green-100",
@@ -44,8 +44,8 @@ const shipmentHistory = [
   {
     id: "2",
     commodity: "Grain",
-    origin: "Minneapolis",
-    destination: "Kansas City",
+    origin: "Kano",
+    destination: "Kaduna",
     status: "In Transit",
     statusColor: "bg-blue-500",
     statusBg: "bg-blue-100",
@@ -55,7 +55,7 @@ const shipmentHistory = [
   {
     id: "3",
     commodity: "Steel",
-    origin: "Cleveland",
+    origin: "Ogbomosho",
     destination: "Detroit",
     status: "Delivered",
     statusColor: "bg-green-500",
@@ -66,8 +66,8 @@ const shipmentHistory = [
   {
     id: "4",
     commodity: "Lumber",
-    origin: "Portland",
-    destination: "Salt Lake City",
+    origin: "Yola",
+    destination: "Gwagwalada City",
     status: "Cancelled",
     statusColor: "bg-red-500",
     statusBg: "bg-red-100",

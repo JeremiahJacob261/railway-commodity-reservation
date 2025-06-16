@@ -26,7 +26,7 @@ interface ChatContact {
 const contacts: ChatContact[] = [
   {
     id: "contact1",
-    name: "Jackson Miller",
+    name: "Jackson Akpan",
     orderId: "ORD-001",
     lastMessage: "Are you close to the delivery location?",
     unread: true,
@@ -34,7 +34,7 @@ const contacts: ChatContact[] = [
   },
   {
     id: "contact2",
-    name: "Sophia Anderson",
+    name: "Sophia Jamiu",
     orderId: "ORD-002",
     lastMessage: "Thanks for the update!",
     unread: false,

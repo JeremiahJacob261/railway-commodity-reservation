@@ -99,7 +99,7 @@ const contacts = [
   },
   {
     id: "2",
-    name: "Maria Garcia",
+    name: "Maria Okoro",
     role: "Operator",
     initials: "MG",
     unread: 0,
@@ -140,7 +140,7 @@ const messages = [
   },
   {
     sender: "other",
-    content: "Your shipment is currently being loaded at Chicago Terminal. It's about 60% complete.",
+    content: "Your shipment is currently being loaded at Garki Terminal. It's about 60% complete.",
     time: "10:33 AM",
   },
   {
@@ -151,7 +151,7 @@ const messages = [
   {
     sender: "other",
     content:
-      "We're on schedule for a 2:00 PM departure today. The train should arrive in Pittsburgh around 10:00 AM tomorrow.",
+      "We're on schedule for a 2:00 PM departure today. The train should arrive in Onitsha around 10:00 AM tomorrow.",
     time: "10:36 AM",
   },
   {
@@ -162,7 +162,7 @@ const messages = [
   {
     sender: "other",
     content:
-      "Yes, you'll receive an automatic notification when the train departs Chicago and another when it arrives in Pittsburgh.",
+      "Yes, you'll receive an automatic notification when the train departs Garki and another when it arrives in Onitsha.",
     time: "10:40 AM",
   },
 ]

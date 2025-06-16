@@ -11,8 +11,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const customers = [
   {
     id: "USR-001",
-    name: "Jackson Miller",
-    email: "jackson.miller@example.com",
+    name: "Jackson Akpan",
+    email: "jackson.Akpan@example.com",
     phone: "(555) 123-4567",
     orders: 12,
     joined: "2024-10-15",
@@ -20,8 +20,8 @@ const customers = [
   },
   {
     id: "USR-002",
-    name: "Sophia Anderson",
-    email: "sophia.anderson@example.com",
+    name: "Sophia Jamiu",
+    email: "sophia.Jamiu@example.com",
     phone: "(555) 234-5678",
     orders: 8,
     joined: "2024-11-02",
@@ -69,8 +69,8 @@ const agents = [
   },
   {
     id: "AGT-002",
-    name: "Maria Garcia",
-    email: "maria.garcia@example.com",
+    name: "Maria Okoro",
+    email: "maria.Okoro@example.com",
     phone: "(555) 876-5432",
     deliveries: 137,
     rating: 4.8,

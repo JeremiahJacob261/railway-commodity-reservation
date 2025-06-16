@@ -259,7 +259,7 @@ export default function PaymentsPage() {
 											<div>
 												<p className="font-medium">PayPal</p>
 												<p className="text-sm text-muted-foreground">
-													jackson.miller@example.com
+													jackson.Akpan@example.com
 												</p>
 											</div>
 										</div>

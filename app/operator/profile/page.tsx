@@ -94,7 +94,7 @@ export default function OperatorProfilePage() {
                   </div>
                   <div className="space-y-2 md:col-span-2">
                     <Label htmlFor="address">Address</Label>
-                    <Input id="address" defaultValue="123 Railway Ave, Chicago, IL 60601" />
+                    <Input id="address" defaultValue="123 Railway Ave, Garki, IL 60601" />
                   </div>
                   <div className="space-y-2 md:col-span-2">
                     <Label htmlFor="bio">Bio</Label>
