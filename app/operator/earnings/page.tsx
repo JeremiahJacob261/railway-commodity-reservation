@@ -46,7 +46,7 @@ export default function OperatorEarningsPage() {
                 </svg>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">$5,231.89</div>
+                <div className="text-2xl font-bold">₦5,231.89</div>
                 <p className="text-xs text-muted-foreground">+20.1% from last month</p>
               </CardContent>
             </Card>
@@ -69,7 +69,7 @@ export default function OperatorEarningsPage() {
                 </svg>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">$42,891.25</div>
+                <div className="text-2xl font-bold">₦42,891.25</div>
                 <p className="text-xs text-muted-foreground">+180.1% from last year</p>
               </CardContent>
             </Card>
@@ -91,7 +91,7 @@ export default function OperatorEarningsPage() {
                 </svg>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">$1,250.00</div>
+                <div className="text-2xl font-bold">₦1,250.00</div>
                 <p className="text-xs text-muted-foreground">To be paid on Nov 15</p>
               </CardContent>
             </Card>
@@ -186,31 +186,31 @@ const recentPayments = [
     id: "1",
     date: "Nov 1, 2023",
     shipment: "RC-12340",
-    amount: "$850.00",
+    amount: "₦850.00",
   },
   {
     id: "2",
     date: "Oct 28, 2023",
     shipment: "RC-12335",
-    amount: "$1,200.00",
+    amount: "₦1,200.00",
   },
   {
     id: "3",
     date: "Oct 25, 2023",
     shipment: "RC-12330",
-    amount: "$950.00",
+    amount: "₦950.00",
   },
   {
     id: "4",
     date: "Oct 20, 2023",
     shipment: "RC-12325",
-    amount: "$1,100.00",
+    amount: "₦1,100.00",
   },
   {
     id: "5",
     date: "Oct 15, 2023",
     shipment: "RC-12320",
-    amount: "$780.00",
+    amount: "₦780.00",
   },
 ]
 
@@ -221,7 +221,7 @@ const paymentHistory = [
     shipment: "RC-12340",
     route: "Ogbomosho to Detroit",
     status: "Paid",
-    amount: "$850.00",
+    amount: "₦850.00",
   },
   {
     id: "2",
@@ -229,7 +229,7 @@ const paymentHistory = [
     shipment: "RC-12335",
     route: "Garki to Onitsha",
     status: "Paid",
-    amount: "$1,200.00",
+    amount: "₦1,200.00",
   },
   {
     id: "3",
@@ -237,7 +237,7 @@ const paymentHistory = [
     shipment: "RC-12330",
     route: "Kano to Kaduna",
     status: "Paid",
-    amount: "$950.00",
+    amount: "₦950.00",
   },
   {
     id: "4",
@@ -245,7 +245,7 @@ const paymentHistory = [
     shipment: "RC-12325",
     route: "Detroit to Nashville",
     status: "Paid",
-    amount: "$1,100.00",
+    amount: "₦1,100.00",
   },
   {
     id: "5",
@@ -253,7 +253,7 @@ const paymentHistory = [
     shipment: "RC-12320",
     route: "Yola to Gwagwalada City",
     status: "Paid",
-    amount: "$780.00",
+    amount: "₦780.00",
   },
   {
     id: "6",
@@ -261,7 +261,7 @@ const paymentHistory = [
     shipment: "RC-12315",
     route: "Garki to Ogbomosho",
     status: "Paid",
-    amount: "$920.00",
+    amount: "₦920.00",
   },
   {
     id: "7",
@@ -269,7 +269,7 @@ const paymentHistory = [
     shipment: "RC-12310",
     route: "Kaduna to Denver",
     status: "Paid",
-    amount: "$1,050.00",
+    amount: "₦1,050.00",
   },
   {
     id: "8",
@@ -277,6 +277,6 @@ const paymentHistory = [
     shipment: "RC-12305",
     route: "Onitsha to Ogbomosho",
     status: "Paid",
-    amount: "$800.00",
+    amount: "₦800.00",
   },
 ]

@@ -13,7 +13,7 @@ const transactions = [
     id: "TRX-001",
     orderId: "ORD-001",
     customer: "Jackson Akpan",
-    amount: "$24.99",
+    amount: "₦24.99",
     method: "Credit Card",
     date: "2025-01-10",
     status: "Completed",
@@ -22,7 +22,7 @@ const transactions = [
     id: "TRX-002",
     orderId: "ORD-002",
     customer: "Sophia Jamiu",
-    amount: "$42.50",
+    amount: "₦42.50",
     method: "PayPal",
     date: "2025-01-09",
     status: "Completed",
@@ -31,7 +31,7 @@ const transactions = [
     id: "TRX-003",
     orderId: "ORD-003",
     customer: "William Kim",
-    amount: "$18.75",
+    amount: "₦18.75",
     method: "Credit Card",
     date: "2025-01-09",
     status: "Completed",
@@ -40,7 +40,7 @@ const transactions = [
     id: "TRX-004",
     orderId: "ORD-004",
     customer: "Emma Martinez",
-    amount: "$65.20",
+    amount: "₦65.20",
     method: "Debit Card",
     date: "2025-01-08",
     status: "Refunded",
@@ -49,7 +49,7 @@ const transactions = [
     id: "TRX-005",
     orderId: "ORD-005",
     customer: "Liam Johnson",
-    amount: "$37.99",
+    amount: "₦37.99",
     method: "Credit Card",
     date: "2025-01-08",
     status: "Completed",
@@ -58,7 +58,7 @@ const transactions = [
     id: "TRX-006",
     orderId: "ORD-006",
     customer: "Olivia Brown",
-    amount: "$29.50",
+    amount: "₦29.50",
     method: "PayPal",
     date: "2025-01-07",
     status: "Completed",
@@ -67,7 +67,7 @@ const transactions = [
     id: "TRX-007",
     orderId: "ORD-007",
     customer: "Noah Davis",
-    amount: "$52.25",
+    amount: "₦52.25",
     method: "Credit Card",
     date: "2025-01-07",
     status: "Pending",
@@ -76,7 +76,7 @@ const transactions = [
     id: "TRX-008",
     orderId: "ORD-008",
     customer: "Ava Wilson",
-    amount: "$19.99",
+    amount: "₦19.99",
     method: "Debit Card",
     date: "2025-01-06",
     status: "Completed",
@@ -85,7 +85,7 @@ const transactions = [
     id: "TRX-009",
     orderId: "ORD-009",
     customer: "James Taylor",
-    amount: "$45.75",
+    amount: "₦45.75",
     method: "Credit Card",
     date: "2025-01-06",
     status: "Completed",
@@ -94,7 +94,7 @@ const transactions = [
     id: "TRX-010",
     orderId: "ORD-010",
     customer: "Isabella Thomas",
-    amount: "$33.50",
+    amount: "₦33.50",
     method: "PayPal",
     date: "2025-01-05",
     status: "Completed",
@@ -105,7 +105,7 @@ const payouts = [
   {
     id: "PAY-001",
     agent: "Alex Johnson",
-    amount: "$1,245.50",
+    amount: "₦1,245.50",
     deliveries: 42,
     date: "2025-01-15",
     status: "Completed",
@@ -113,7 +113,7 @@ const payouts = [
   {
     id: "PAY-002",
     agent: "Maria Okoro",
-    amount: "$1,180.75",
+    amount: "₦1,180.75",
     deliveries: 38,
     date: "2025-01-15",
     status: "Completed",
@@ -121,7 +121,7 @@ const payouts = [
   {
     id: "PAY-003",
     agent: "David Lee",
-    amount: "$1,050.25",
+    amount: "₦1,050.25",
     deliveries: 35,
     date: "2025-01-15",
     status: "Pending",
@@ -129,7 +129,7 @@ const payouts = [
   {
     id: "PAY-004",
     agent: "Sarah Wilson",
-    amount: "$975.00",
+    amount: "₦975.00",
     deliveries: 32,
     date: "2025-01-15",
     status: "Completed",
@@ -137,7 +137,7 @@ const payouts = [
   {
     id: "PAY-005",
     agent: "Michael Brown",
-    amount: "$890.50",
+    amount: "₦890.50",
     deliveries: 30,
     date: "2025-01-15",
     status: "Failed",
@@ -163,7 +163,7 @@ export default function PaymentsPage() {
             <CreditCard className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$45,231.89</div>
+            <div className="text-2xl font-bold">₦45,231.89</div>
             <p className="text-xs text-muted-foreground">+20.1% from last month</p>
           </CardContent>
         </Card>
@@ -193,7 +193,7 @@ export default function PaymentsPage() {
             <CreditCard className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$37.50</div>
+            <div className="text-2xl font-bold">₦37.50</div>
             <p className="text-xs text-muted-foreground">+$2.25 from last month</p>
           </CardContent>
         </Card>

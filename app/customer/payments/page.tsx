@@ -86,7 +86,7 @@ export default function PaymentsPage() {
 						<CreditCard className="h-4 w-4 text-muted-foreground" />
 					</CardHeader>
 					<CardContent>
-						<div className="text-2xl font-bold">$271.18</div>
+						<div className="text-2xl font-bold">₦271.18</div>
 						<p className="text-xs text-muted-foreground">Across 7 deliveries</p>
 					</CardContent>
 				</Card>
@@ -96,7 +96,7 @@ export default function PaymentsPage() {
 						<CreditCard className="h-4 w-4 text-muted-foreground" />
 					</CardHeader>
 					<CardContent>
-						<div className="text-2xl font-bold">$38.74</div>
+						<div className="text-2xl font-bold">₦38.74</div>
 						<p className="text-xs text-muted-foreground">Per delivery</p>
 					</CardContent>
 				</Card>
@@ -106,7 +106,7 @@ export default function PaymentsPage() {
 						<CreditCard className="h-4 w-4 text-muted-foreground" />
 					</CardHeader>
 					<CardContent>
-						<div className="text-2xl font-bold">$45.00</div>
+						<div className="text-2xl font-bold">₦45.00</div>
 						<p className="text-xs text-muted-foreground">With membership</p>
 					</CardContent>
 				</Card>
