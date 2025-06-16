@@ -36,33 +36,21 @@ export default function SettingsPage() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="support-email">Support Email</Label>
-                <Input id="support-email" type="email" defaultValue="support@deliveryhub.com" />
+                <Input id="support-email" type="email" defaultValue="support@railwaycommodity.ng" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="support-phone">Support Phone</Label>
-                <Input id="support-phone" defaultValue="(555) 123-4567" />
+                <Input id="support-phone" defaultValue="+234-801-234-5678" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="timezone">Default Timezone</Label>
-                <Select defaultValue="utc-8">
+                <Select defaultValue="utc+1">
                   <SelectTrigger id="timezone">
                     <SelectValue placeholder="Select timezone" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="utc-12">UTC-12:00</SelectItem>
-                    <SelectItem value="utc-11">UTC-11:00</SelectItem>
-                    <SelectItem value="utc-10">UTC-10:00</SelectItem>
-                    <SelectItem value="utc-9">UTC-09:00</SelectItem>
-                    <SelectItem value="utc-8">UTC-08:00 (PST)</SelectItem>
-                    <SelectItem value="utc-7">UTC-07:00 (MST)</SelectItem>
-                    <SelectItem value="utc-6">UTC-06:00 (CST)</SelectItem>
-                    <SelectItem value="utc-5">UTC-05:00 (EST)</SelectItem>
-                    <SelectItem value="utc-4">UTC-04:00</SelectItem>
-                    <SelectItem value="utc-3">UTC-03:00</SelectItem>
-                    <SelectItem value="utc-2">UTC-02:00</SelectItem>
-                    <SelectItem value="utc-1">UTC-01:00</SelectItem>
+                    <SelectItem value="utc+1">UTC+01:00 (WAT - West Africa Time)</SelectItem>
                     <SelectItem value="utc">UTC+00:00</SelectItem>
-                    <SelectItem value="utc+1">UTC+01:00</SelectItem>
                     <SelectItem value="utc+2">UTC+02:00</SelectItem>
                     <SelectItem value="utc+3">UTC+03:00</SelectItem>
                     <SelectItem value="utc+4">UTC+04:00</SelectItem>

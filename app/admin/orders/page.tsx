@@ -10,12 +10,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const orders = [
   {
     id: "ORD-001",
-    customer: "Jackson Miller",
+    customer: "Adebayo Ogundimu",
     date: "2025-01-10",
-    status: "Pending",
-    total: "₦24.99",
+    status: "Processing",
+    total: "₦24,990",
     items: "2",
-    address: "123 Main St, Anytown, USA",
+    address: "123 Main St, Victoria Island, Lagos, Nigeria",
   },
   {
     id: "ORD-002",
@@ -24,7 +24,7 @@ const orders = [
     status: "Processing",
     total: "₦42,500",
     items: "3",
-    address: "456 Oak Ave, Somewhere, Nigeria",
+    address: "456 Ahmadu Bello Way, Abuja, Nigeria",
   },
   {
     id: "ORD-003",
@@ -33,7 +33,7 @@ const orders = [
     status: "Delivered",
     total: "₦18,750",
     items: "1",
-    address: "789 Pine St, Nowhere, Nigeria",
+    address: "789 Niger Bridge Road, Onitsha, Nigeria",
   },
   {
     id: "ORD-004",
@@ -42,7 +42,7 @@ const orders = [
     status: "Cancelled",
     total: "₦65,200",
     items: "4",
-    address: "321 Maple Dr, Everywhere, Nigeria",
+    address: "321 Sapele Road, Benin City, Nigeria",
   },
   {
     id: "ORD-005",
@@ -51,7 +51,7 @@ const orders = [
     status: "Delivered",
     total: "₦37,990",
     items: "2",
-    address: "555 Cedar Ln, Anywhere, Nigeria",
+    address: "555 Aba Road, Port Harcourt, Nigeria",
   },
   {
     id: "ORD-006",

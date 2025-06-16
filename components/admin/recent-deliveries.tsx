@@ -56,7 +56,7 @@ export function RecentDeliveries() {
           <AvatarFallback>EM</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">Emma Martinez</p>
+          <p className="text-sm font-medium leading-none">Adebayo Ogundimu</p>
           <p className="text-sm text-muted-foreground">18 Sapele Road → 9 Bompai Road</p>
         </div>
         <div className="ml-auto font-medium">

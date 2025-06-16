@@ -53,15 +53,15 @@ export default function ShipperSettingsPage() {
 
               <div className="space-y-1">
                 <Label htmlFor="timezone">Timezone</Label>
-                <Select defaultValue="america_chicago">
+                <Select defaultValue="africa_lagos">
                   <SelectTrigger id="timezone">
                     <SelectValue placeholder="Select timezone" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="america_chicago">America/Chicago</SelectItem>
-                    <SelectItem value="america_new_york">America/New York</SelectItem>
-                    <SelectItem value="america_los_angeles">America/Los Angeles</SelectItem>
-                    <SelectItem value="europe_london">Europe/London</SelectItem>
+                    <SelectItem value="africa_lagos">Africa/Lagos (WAT)</SelectItem>
+                    <SelectItem value="utc">UTC+00:00</SelectItem>
+                    <SelectItem value="utc+1">UTC+01:00</SelectItem>
+                    <SelectItem value="utc+2">UTC+02:00</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -142,15 +142,17 @@ export default function ShipperSettingsPage() {
             <CardContent className="space-y-4">
               <div className="space-y-1">
                 <Label htmlFor="default-origin">Default Origin Station</Label>
-                <Select defaultValue="chicago">
+                <Select defaultValue="lagos">
                   <SelectTrigger id="default-origin">
                     <SelectValue placeholder="Select origin station" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="chicago">Chicago Terminal</SelectItem>
-                    <SelectItem value="pittsburgh">Pittsburgh Yard</SelectItem>
-                    <SelectItem value="kansas_city">Kansas City Hub</SelectItem>
-                    <SelectItem value="portland">Portland Terminal</SelectItem>
+                    <SelectItem value="lagos">Lagos Terminal</SelectItem>
+                    <SelectItem value="kano">Kano Central</SelectItem>
+                    <SelectItem value="abuja">Abuja Rail Station</SelectItem>
+                    <SelectItem value="port_harcourt">Port Harcourt Terminal</SelectItem>
+                    <SelectItem value="kaduna">Kaduna Junction</SelectItem>
+                    <SelectItem value="ibadan">Ibadan Station</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

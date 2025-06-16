@@ -82,8 +82,8 @@ const deliveries = [
   {
     id: "DEL-008",
     orderId: "ORD-009",
-    agent: "Emily Taylor",
-    customer: "James Taylor",
+    agent: "Amina Hassan",
+    customer: "Olumide Adebayo",
     pickup: "13 Ring Road, Ibadan, Nigeria",
     dropoff: "4 Chestnut Close, Abuja, Nigeria",
     status: "Pending",
